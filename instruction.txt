@@ -1,0 +1,8 @@
+
+1) Run pro1.py in terminal
+2) Enter name of a city/ college, society etc 
+3) Press Insert
+3) Press Search
+4) where.html will open in chrome
+5) Zoom in on pin press building name to open in google maps
+4) Db is stored in goedata.sqlite (Open with db browser for sqllite)
