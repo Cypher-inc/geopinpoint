@@ -2,6 +2,8 @@ from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
 import os
+import sqlite3
+import codecs
 
 
 win = Tk()
@@ -48,16 +50,37 @@ def checking():
 
 
 def clear():
-	 	text1.delete(0.0, END)
+            print('Deleting Text..')
+
+
+            import sqlite3
+  
+            # create connection to the 
+            connection = sqlite3.connect('geodata.sqlite')
+            
+            # drop table
+            connection.execute("DROP TABLE Locations")
+            
+            connection.execute('''CREATE TABLE IF NOT EXISTS Locations (address TEXT, geodata TEXT)''')
+            
+            # close the connection
+            connection.close()
+
+            f = open("where.data", "r+") 
+            # absolute file positioning
+            f.seek(0) 
+            # to erase all data 
+            f.truncate() 
+            text1.delete(0.0, END)
+            print("Data cleared successfully")
+
 	 				
-
-
 def ExitApp():
- msgbox = messagebox.askquestion('Exit','Do you want to quit the app',icon='warning')
- if msgbox=="yes":
- 	 win.destroy()
- else:
- 	 messagebox.showinfo('Return',' Return ')
+    msgbox = messagebox.askquestion('Exit','Do you want to quit the app',icon='warning')
+    if msgbox=="yes":
+        win.destroy()
+    else:
+        messagebox.showinfo('Return',' Return ')
 
 	 				
 

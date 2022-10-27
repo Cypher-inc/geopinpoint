@@ -6,3 +6,6 @@
 4) where.html will open in chrome
 5) Zoom in on pin press building name to open in google maps
 4) Db is stored in goedata.sqlite (Open with db browser for sqllite)
+
+
+DELETE FROM table_name;
