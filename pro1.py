@@ -1,9 +1,7 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
-import os
 import sqlite3
-import codecs
 
 
 win = Tk()
@@ -53,7 +51,6 @@ def clear():
             print('Deleting Text..')
 
 
-            import sqlite3
   
             # create connection to the 
             connection = sqlite3.connect('geodata.sqlite')
